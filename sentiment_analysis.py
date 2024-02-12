@@ -21,8 +21,6 @@ def preprocess_text(text):
     return processed_text
 
 
-
-
 #download nltk corpus
 nltk.download('all')
 
