@@ -39,8 +39,20 @@ df['reviewText']= df['reviewText'].apply(preprocess_text)
 
 print(df)
 
-#initialize nlt
+#initialize nltk sentiment analyzer
 analyzer= SentimentIntensityAnalyzer()
+
+#create get_sentiment function
+def get_sentiment(text):
+    scores= analyzer.polarity_scores(text)
+    sentiment=1 if scores['pos'] > 0 else 0
+    return sentiment
+
+#apply get_sentiment function
+df['sentiment'] = df['reviewText'].apply(get_sentiment)
+
+print(df)
+
 
 
 
