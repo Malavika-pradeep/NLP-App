@@ -29,7 +29,7 @@ simple_test= ["please don't call me"]
 simple_test_dm= vect.transform(simple_test)
 simple_test_dm.toarray()
 
-test_df= pd.DataFrame(simple_test_dm.toarray(), column= vect.get_feature_names_out())
+test_df= pd.DataFrame(simple_test_dm.toarray(), columns= vect.get_feature_names_out())
 
 print('TEST DATAFRAME:')
 print(test_df)
