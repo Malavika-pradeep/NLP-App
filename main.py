@@ -20,15 +20,19 @@ print(simple_train_dtm)
 #convert sparse matrix to a dense matrix
 print(simple_train_dtm.toarray())
 
-
+#examine vocabulary and document-term matrix together
 df = pd.DataFrame(simple_train_dtm.toarray(), columns= vect.get_feature_names_out())
 print('TRAIN DATAFRAME:')
 print(df)
 
+#sample test
 simple_test= ["please don't call me"]
+
+#transform testing data into document-matrix (using existing vocabulary)
 simple_test_dm= vect.transform(simple_test)
 simple_test_dm.toarray()
 
+#examine vocabulary and document-matrix of samle test data
 test_df= pd.DataFrame(simple_test_dm.toarray(), columns= vect.get_feature_names_out())
 
 print('TEST DATAFRAME:')
